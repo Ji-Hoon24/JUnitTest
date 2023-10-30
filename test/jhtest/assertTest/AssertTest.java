@@ -1,6 +1,7 @@
 package jhtest.assertTest;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -170,5 +171,11 @@ public class AssertTest {
         writer.write("test data");
         writer.close();
 //        throw new IOException("test");
+    }
+
+    @Test
+    @Ignore("Don't forget me!")
+    public void somethingWeCannotHandleRightNow() {
+
     }
 }

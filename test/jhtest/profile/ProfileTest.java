@@ -44,4 +44,24 @@ public class ProfileTest {
         // 단언
         assertTrue(matches);
     }
+
+    @Test
+    public void matches() {
+        // 준비 및 실행
+        // must-match 항목이 맞지 않으면 false
+        profile.add(new Answer(question, Bool.FALSE));
+        criteria.add(new Criterion(new Answer(question, Bool.TRUE), Weight.MustMatch));
+
+        // 단언
+        assertFalse(profile.matches(criteria));
+
+        // 준비 및 실행
+        //don't care 항목에 대해서는 true
+        criteria = new Criteria();
+        profile.add(new Answer(question, Bool.FALSE));
+        criteria.add(new Criterion(new Answer(question, Bool.TRUE), Weight.DontCare));
+
+        // 단언
+        assertTrue(profile.matches(criteria));
+    }
 }
