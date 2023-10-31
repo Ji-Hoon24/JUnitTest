@@ -46,7 +46,7 @@ public class Profile {
     }
 
     public int getScore() {
-        return score;
+        return this.score;
     }
 
     public List<Answer> find(Predicate<Answer> pred) {
