@@ -40,7 +40,9 @@ public class Answer {
       return question.match(i, otherAnswer.i);
    }
 
-   public Question getCharacteristic() {
+   public Question getQuestion() {
       return question;
    }
+
+
 }

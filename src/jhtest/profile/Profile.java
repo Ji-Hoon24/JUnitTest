@@ -1,6 +1,8 @@
 package jhtest.profile;
 
 import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Profile {
     private Map<String, Answer> answers = new HashMap<>();
@@ -45,5 +47,9 @@ public class Profile {
 
     public int getScore() {
         return score;
+    }
+
+    public List<Answer> find(Predicate<Answer> pred) {
+        return answers.values().stream().filter(pred).collect(Collectors.toList());
     }
 }

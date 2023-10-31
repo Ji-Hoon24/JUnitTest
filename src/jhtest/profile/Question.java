@@ -27,6 +27,10 @@ public abstract class Question {
       return answerChoices[i];
    }
 
+   public int getId() {
+      return this.id;
+   }
+
    public boolean match(Answer answer) {
       return false;
    }
